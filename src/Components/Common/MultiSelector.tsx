@@ -42,6 +42,10 @@ const Selection = styled.button<Pick<Props, 'width' | 'selected'> >`
     color: ${({ theme }) => theme.textPrimaryLight};
     font-weight: bold;
     font-size: 15px;
+    
+    @media screen and (max-width: 350px) {
+        font-size: 12.5px;
+    }
 
     ${({ selected }) => selected &&`
         border: 2px solid #ECF6FE;
