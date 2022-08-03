@@ -116,7 +116,9 @@ const UserStake: React.FC<Props> = (props) => {
         let interval = setInterval(() => {
             if(props.data.unlockTime > Date.now() / 1000) {
                 getCountdown(props.data.unlockTime);
-            } 
+            } else if (props.data.unlockTime < Date.now() / 1000) {
+                setCanClaim(true);
+            }
         }, 1000)
 
         return () => clearInterval(interval);
